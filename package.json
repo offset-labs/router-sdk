@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/router-sdk.git"
+    "url": "git+https://github.com/Uniswap/router-sdk.git"
   },
   "keywords": [
     "offset",
@@ -44,5 +44,10 @@
     "printWidth": 120,
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Uniswap/router-sdk/issues"
+  },
+  "homepage": "https://github.com/Uniswap/router-sdk#readme",
+  "author": "Offset Labs"
 }
