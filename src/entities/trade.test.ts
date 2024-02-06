@@ -1,4 +1,4 @@
-import { sqrt, Token, CurrencyAmount, TradeType, WETH9, Ether, Percent, Price } from '@uniswap/sdk-core'
+import { sqrt, Token, CurrencyAmount, TradeType, WETH9, Ether, Percent, Price } from '@offsetcarbon/sdk-core'
 import JSBI from 'jsbi'
 import { MixedRoute, RouteV2, RouteV3 } from './route'
 import { Trade } from './trade'
@@ -10,17 +10,17 @@ import {
   TickMath,
   nearestUsableTick,
   encodeSqrtRatioX96,
-} from '@uniswap/v3-sdk'
-import { Pair, Route as V2RouteSDK } from '@uniswap/v2-sdk'
+} from '@offsetcarbon/v3-sdk'
+import { Pair, Route as V2RouteSDK } from '@offsetcarbon/v2-sdk'
 import { MixedRouteSDK } from './mixedRoute/route'
 
 describe('Trade', () => {
-  const ETHER = Ether.onChain(1)
-  const weth = WETH9[1]
-  const token0 = new Token(1, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
-  const token1 = new Token(1, '0x0000000000000000000000000000000000000002', 18, 't1', 'token1')
-  const token2 = new Token(1, '0x0000000000000000000000000000000000000003', 18, 't2', 'token2')
-  const token3 = new Token(1, '0x0000000000000000000000000000000000000004', 18, 't3', 'token3')
+  const ETHER = Ether.onChain(421614)
+  const weth = WETH9[421614]
+  const token0 = new Token(421614, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
+  const token1 = new Token(421614, '0x0000000000000000000000000000000000000002', 18, 't1', 'token1')
+  const token2 = new Token(421614, '0x0000000000000000000000000000000000000003', 18, 't2', 'token2')
+  const token3 = new Token(421614, '0x0000000000000000000000000000000000000004', 18, 't3', 'token3')
 
   function v2StylePool(
     reserve0: CurrencyAmount<Token>,

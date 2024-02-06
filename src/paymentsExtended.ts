@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi'
-import { Percent, Token, validateAndParseAddress } from '@uniswap/sdk-core'
-import { abi } from '@uniswap/swap-router-contracts/artifacts/contracts/interfaces/IPeripheryPaymentsWithFeeExtended.sol/IPeripheryPaymentsWithFeeExtended.json'
-import { FeeOptions, Payments, toHex } from '@uniswap/v3-sdk'
+import { Percent, Token, validateAndParseAddress } from '@offsetcarbon/sdk-core'
+import { abi } from '@offsetcarbon/swap-router-contracts/artifacts/contracts/interfaces/IPeripheryPaymentsWithFeeExtended.sol/IPeripheryPaymentsWithFeeExtended.json'
+import { FeeOptions, Payments, toHex } from '@offsetcarbon/v3-sdk'
 import JSBI from 'jsbi'
 
 function encodeFeeBips(fee: Percent): string {

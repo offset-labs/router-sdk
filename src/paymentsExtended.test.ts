@@ -1,4 +1,4 @@
-import { Percent, Token } from '@uniswap/sdk-core'
+import { Percent, Token } from '@offsetcarbon/sdk-core'
 import JSBI from 'jsbi'
 import { PaymentsExtended } from './paymentsExtended'
 
@@ -10,7 +10,7 @@ const feeOptions = {
   recipient: '0x0000000000000000000000000000000000000009',
 }
 
-const token = new Token(1, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
+const token = new Token(421614, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
 
 describe('PaymentsExtended', () => {
   describe('#encodeUnwrapWETH9', () => {

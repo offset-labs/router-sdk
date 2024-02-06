@@ -1,16 +1,16 @@
-import { CurrencyAmount, Ether, Token, WETH9 } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { encodeSqrtRatioX96, FeeAmount, Pool } from '@uniswap/v3-sdk'
+import { CurrencyAmount, Ether, Token, WETH9 } from '@offsetcarbon/sdk-core'
+import { Pair } from '@offsetcarbon/v2-sdk'
+import { encodeSqrtRatioX96, FeeAmount, Pool } from '@offsetcarbon/v3-sdk'
 import { MixedRouteSDK } from '../entities/mixedRoute/route'
 import { encodeMixedRouteToPath } from './encodeMixedRouteToPath'
 
 describe('#encodeMixedRouteToPath', () => {
-  const ETHER = Ether.onChain(1)
-  const token0 = new Token(1, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
-  const token1 = new Token(1, '0x0000000000000000000000000000000000000002', 18, 't1', 'token1')
-  const token2 = new Token(1, '0x0000000000000000000000000000000000000003', 18, 't2', 'token2')
+  const ETHER = Ether.onChain(421614)
+  const token0 = new Token(421614, '0x0000000000000000000000000000000000000001', 18, 't0', 'token0')
+  const token1 = new Token(421614, '0x0000000000000000000000000000000000000002', 18, 't1', 'token1')
+  const token2 = new Token(421614, '0x0000000000000000000000000000000000000003', 18, 't2', 'token2')
 
-  const weth = WETH9[1]
+  const weth = WETH9[421614]
 
   const pool_0_1_medium = new Pool(token0, token1, FeeAmount.MEDIUM, encodeSqrtRatioX96(1, 1), 0, 0, [])
   const pool_1_2_low = new Pool(token1, token2, FeeAmount.LOW, encodeSqrtRatioX96(1, 1), 0, 0, [])
@@ -56,25 +56,25 @@ describe('#encodeMixedRouteToPath', () => {
 
     it('wraps ether input for exact input single hop', () => {
       expect(encodeMixedRouteToPath(route_weth_V3_0)).toEqual(
-        '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000bb80000000000000000000000000000000000000001'
+        '0x980b62da83eff3d4576c647993b0c1d7faf17c73000bb80000000000000000000000000000000000000001'
       )
     })
 
     it('wraps ether input for exact input multihop', () => {
       expect(encodeMixedRouteToPath(route_weth_V3_0_V3_1)).toEqual(
-        '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000bb80000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002'
+        '0x980b62da83eff3d4576c647993b0c1d7faf17c73000bb80000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002'
       )
     })
 
     it('wraps ether output for exact input single hop', () => {
       expect(encodeMixedRouteToPath(route_0_V3_weth)).toEqual(
-        '0x0000000000000000000000000000000000000001000bb8c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+        '0x0000000000000000000000000000000000000001000bb8980b62da83eff3d4576c647993b0c1d7faf17c73'
       )
     })
 
     it('wraps ether output for exact input multihop', () => {
       expect(encodeMixedRouteToPath(route_0_V3_1_V3_weth)).toEqual(
-        '0x0000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002000bb8c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+        '0x0000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002000bb8980b62da83eff3d4576c647993b0c1d7faf17c73'
       )
     })
   })
@@ -94,25 +94,25 @@ describe('#encodeMixedRouteToPath', () => {
 
     it('wraps ether input for exact input single hop', () => {
       expect(encodeMixedRouteToPath(route_weth_V2_0)).toEqual(
-        '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc28000000000000000000000000000000000000000000001'
+        '0x980b62da83eff3d4576c647993b0c1d7faf17c738000000000000000000000000000000000000000000001'
       )
     })
 
     it('wraps ether input for exact input multihop', () => {
       expect(encodeMixedRouteToPath(route_weth_V2_0_V2_1)).toEqual(
-        '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc280000000000000000000000000000000000000000000018000000000000000000000000000000000000000000002'
+        '0x980b62da83eff3d4576c647993b0c1d7faf17c7380000000000000000000000000000000000000000000018000000000000000000000000000000000000000000002'
       )
     })
 
     it('wraps ether output for exact input single hop', () => {
       expect(encodeMixedRouteToPath(route_0_V2_weth)).toEqual(
-        '0x0000000000000000000000000000000000000001800000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+        '0x0000000000000000000000000000000000000001800000980b62da83eff3d4576c647993b0c1d7faf17c73'
       )
     })
 
     it('wraps ether output for exact input multihop', () => {
       expect(encodeMixedRouteToPath(route_0_V2_1_V2_weth)).toEqual(
-        '0x00000000000000000000000000000000000000018000000000000000000000000000000000000000000002800000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+        '0x00000000000000000000000000000000000000018000000000000000000000000000000000000000000002800000980b62da83eff3d4576c647993b0c1d7faf17c73'
       )
     })
   })
@@ -120,19 +120,19 @@ describe('#encodeMixedRouteToPath', () => {
   describe('mixed route', () => {
     it('packs them for exact input v3 -> v2 with wrapped ether output', () => {
       expect(encodeMixedRouteToPath(route_0_V3_1_V2_weth)).toEqual(
-        '0x0000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002800000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+        '0x0000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002800000980b62da83eff3d4576c647993b0c1d7faf17c73'
       )
     })
 
     it('packs them for exact input v3 -> v2 -> v2', () => {
       expect(encodeMixedRouteToPath(route_0_V3_weth_V2_1_V2_2)).toEqual(
-        '0x0000000000000000000000000000000000000001000bb8c02aaa39b223fe8d0a0e5c4f27ead9083c756cc280000000000000000000000000000000000000000000028000000000000000000000000000000000000000000003'
+        '0x0000000000000000000000000000000000000001000bb8980b62da83eff3d4576c647993b0c1d7faf17c7380000000000000000000000000000000000000000000028000000000000000000000000000000000000000000003'
       )
     })
 
     it('packs them for exact input v3 -> v3 -> v2', () => {
       expect(encodeMixedRouteToPath(route_0_V3_1_v3_weth_V2_2)).toEqual(
-        '0x0000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002000bb8c02aaa39b223fe8d0a0e5c4f27ead9083c756cc28000000000000000000000000000000000000000000003'
+        '0x0000000000000000000000000000000000000001000bb80000000000000000000000000000000000000002000bb8980b62da83eff3d4576c647993b0c1d7faf17c738000000000000000000000000000000000000000000003'
       )
     })
   })
