@@ -2301,10 +2301,10 @@
     "@uniswap/lib" "^4.0.1-alpha"
     base64-sol "1.0.1"
 
-"@offsetcarbon/v3-sdk@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@offsetcarbon/v3-sdk/-/v3-sdk-3.9.0.tgz#9c270d6a1283fac738f939d068d51a4957f276bc"
-  integrity sha512-d3HOxMOSOF+ADa66GWb2WVHPOrxSfDREEHm5n7gP7nb8zkDjEYaSxfH9UKq5jgJa70mF7xnmEYlp3TAG9j6E5g==
+"@offsetcarbon/v3-sdk@^3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@offsetcarbon/v3-sdk/-/v3-sdk-3.9.1.tgz#74998e0f20f721de094aa6345992655f8061790f"
+  integrity sha512-05pmB9rlWcw4vDly0e/250vbRthuK59w30pDHqms5NV55eI9ga1fb8Mz0Y03QR9hbHAPbJCBpP8Lowbl894HZw==
   dependencies:
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"

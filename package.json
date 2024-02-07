@@ -1,6 +1,6 @@
 {
   "name": "@offsetcarbon/router-sdk",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "An sdk for routing swaps using OffsetCarbon v2 and OffsetCarbon v3.",
   "publishConfig": {
     "access": "public"
@@ -30,7 +30,7 @@
     "@offsetcarbon/sdk-core": "^3.2.3",
     "@offsetcarbon/swap-router-contracts": "1.3.0",
     "@offsetcarbon/v2-sdk": "^3.0.1",
-    "@offsetcarbon/v3-sdk": "^3.9.0"
+    "@offsetcarbon/v3-sdk": "^3.9.1"
   },
   "devDependencies": {
     "@types/jest": "^24.0.25",
